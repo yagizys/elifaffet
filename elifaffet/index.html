@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="/images/favicon.png" />
   <title>Elif | Sorryy</title>
-  <link rel="icon" href="images/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="/index.css" />
 </head>
 <body>
   <div class="container" id="mainContainer">
     <div class="card">
-      <img src="images/cat-img.jpg" alt="Cat Image" />
+      <img src="/images/cat-img.jpg" alt="Cat Image" />
       <h2 style="color: red; font-family: Arial, Helvetica, sans-serif; margin-top: 4px;">Elif!</h2>
       <p class="message" style="margin-top: -2px;">
         Seni üzdüğüm için özür dilerim. <br /> Barışalım mı Güzelim? 🥺💕
@@ -19,7 +19,7 @@
     </div>
     <div class="buttons">
       <button class="btn btn-yes" onclick="accept()">Evet</button>
-      <button class="btn btn-no" onclick="showToast()" id="noBtn">Hayır</button>
+      <button class="btn btn-no" onClick="showToast()" id="noBtn">Hayır</button>
     </div>
   </div>
 
@@ -31,33 +31,9 @@
     </div>
   </div>
 
-  <audio id="yesMusic" src="audio/anlamazdin.mp3"></audio>
+  <audio id="yesMusic" src="/audio/anlamazdin.mp3"></audio>
 
-  <script src="scripts/index.js"></script>
+  <script src="/scripts/index.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-  <script>
-    function accept() {
-      document.getElementById("mainContainer").style.display = "none";
-      document.getElementById("successMessage").style.display = "flex";
-
-      const audio = document.getElementById("yesMusic");
-      audio.currentTime = 0;
-      audio.play().catch(err => {
-        console.warn("Ses çalınamadı:", err);
-      });
-    }
-
-    function showToast() {
-      Swal.fire({
-        toast: true,
-        position: "top-end",
-        icon: "error",
-        title: "Hayır demek yok! Lütfen Evet'e bas 😊",
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-      });
-    }
-  </script>
 </body>
 </html>
