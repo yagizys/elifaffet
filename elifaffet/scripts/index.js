@@ -4,9 +4,8 @@ const container = document.getElementById('mainContainer');
 
 const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 
-// Hayır butonuna tıklanırsa kaçar
 noBtn.addEventListener('touchstart', function(e) {
-    e.preventDefault(); 
+    e.preventDefault();
     moveButton();
 });
 
@@ -23,7 +22,6 @@ noBtn.addEventListener('click', function(e) {
     }
 });
 
-// Butonu ekranın farklı bir yerine taşır
 function moveButton() {
     const maxX = window.innerWidth - noBtn.offsetWidth;
     const maxY = window.innerHeight - noBtn.offsetHeight;
@@ -40,14 +38,12 @@ function moveButton() {
     noBtn.style.transition = 'all 0.2s ease-out';
 }
 
-// Evet'e basılınca olanlar
 function accept() {
     container.style.display = 'none';
     successMessage.style.display = 'flex';
 
     createConfetti();
-    
-    // Anlamazdın şarkısını çal
+
     const audio = document.getElementById("yesMusic");
     audio.currentTime = 0;
     audio.play().catch((err) => {
@@ -55,7 +51,6 @@ function accept() {
     });
 }
 
-// Konfeti efekti
 function createConfetti() {
     const colors = [
         '#2ecc71', '#3498db', '#e74c3c', '#f1c40f', '#9b59b6',
@@ -91,13 +86,12 @@ function createConfetti() {
     }
 }
 
-// Hayır'a basıldığında uyarı göster
 function showToast() {
     Swal.fire({
         toast: true,
         position: "top-end",
         icon: "error",
-        title: "got evete bas lan değerlerini skmiim cirkinmalkopek BAS EVET'e",
+        title: "Lütfen 'Evet' butonuna basın 😄",
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
